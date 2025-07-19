@@ -51,7 +51,10 @@ scenario(
                 : `http://localhost:${address.port}`
           };
         },
-        ({ app }) => app.closeAllConnections()
+        ({ app }) => {
+          app.closeAllConnections();
+          app.close();
+        }
       )
       .when('received a Server-Sent Event client request', ({ url }) =>
         fetch(url, {
