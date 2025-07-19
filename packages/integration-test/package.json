@@ -24,6 +24,7 @@
   "devDependencies": {
     "@testduet/wait-for": "^0.1.0",
     "@tsconfig/strictest": "^2.0.5",
+    "resolve-cwd": "^3.0.0",
     "typescript": "^5.8.3"
   },
   "dependencies": {
