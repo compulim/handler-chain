@@ -22,6 +22,7 @@
   },
   "pinDependencies": {},
   "devDependencies": {
+    "@testduet/given-when-then": "^0.1.0-main.5e524dc",
     "@testduet/wait-for": "^0.1.0",
     "@tsconfig/strictest": "^2.0.5",
     "resolve-cwd": "^3.0.0",
