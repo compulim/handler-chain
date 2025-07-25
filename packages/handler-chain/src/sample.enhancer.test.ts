@@ -1,7 +1,7 @@
 import { scenario } from '@testduet/given-when-then';
 import expect from 'expect';
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
-import { afterEach, beforeEach, describe, it } from 'node:test';
+import * as nodeTest from 'node:test';
 import { composeEnhancer } from './index.ts';
 
 scenario(
@@ -76,11 +76,5 @@ scenario(
       .then('should receive a JSON response', (_, res) => expect(res.text()).resolves.toBe('"Hello, World!"'))
       .when('received a client request with "Accept" header', ({ url }) => fetch(url))
       .then('should receive 406', (_, res) => expect(res.status).toBe(406)),
-  {
-    afterEach,
-    beforeEach,
-    describe,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    it: it as any
-  }
+  nodeTest
 );

@@ -1,7 +1,7 @@
 import { scenario } from '@testduet/given-when-then';
 import { expect } from 'expect';
 import { applyMiddleware, type Middleware } from 'handler-chain';
-import { afterEach, beforeEach, describe, it } from 'node:test';
+import * as nodeTest from 'node:test';
 
 scenario(
   'apply middleware',
@@ -15,11 +15,5 @@ scenario(
       .then('should become (x + y) * y', (_, fn) => {
         expect(fn(3)(request => '' + request)(1)).toBe('12ba');
       }),
-  {
-    afterEach,
-    beforeEach,
-    describe,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    it: it as any
-  }
+  nodeTest
 );

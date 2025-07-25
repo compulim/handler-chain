@@ -1,6 +1,6 @@
 import { scenario } from '@testduet/given-when-then';
 import { expect } from 'expect';
-import { afterEach, beforeEach, describe, it } from 'node:test';
+import * as nodeTest from 'node:test';
 import composeEnhancer from './composeEnhancer.ts';
 import { type Enhancer } from './types.ts';
 
@@ -16,13 +16,7 @@ scenario(
       .then('should become (x + 1) * 10 + "b" + "a"', (_, enhancer) => {
         expect(enhancer(request => '' + request)(2)).toBe('30ba');
       }),
-  {
-    afterEach,
-    beforeEach,
-    describe,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    it: it as any
-  }
+  nodeTest
 );
 
 scenario(
@@ -34,11 +28,5 @@ scenario(
       .then('should become x + ""', (_, enhancer) => {
         expect(enhancer(request => '' + request)(1)).toBe('1');
       }),
-  {
-    afterEach,
-    beforeEach,
-    describe,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    it: it as any
-  }
+  nodeTest
 );
