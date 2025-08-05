@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>handler-chain demo</title>
+    <link href="./common.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      #result {
+        background-color: #333;
+        font-family: 'Courier New', Courier, monospace;
+        outline: solid 1px #999;
+        outline-offset: 0.1em;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "handler-chain": "../static/handler-chain/js/main.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p>Result is <span id="result"></span>.</p>
+    <script id="code" type="module">
+      import { applyMiddleware } from 'handler-chain';
+
+      /** @type {import('handler-chain').Middleware<string, number, number>[]} */
+      const middleware = [
+        init => next => request => next(request + init) + 'a',
+        init => next => request => next(request * init) + 'b'
+      ];
+
+      const fn = applyMiddleware(...middleware);
+
+      document.getElementById('result').textContent = fn(3)(request => '' + request)(1);
+    </script>
+    <script>
+      window.parent.postMessage({ code: document.getElementById('code')?.textContent }, '*');
+    </script>
+  </body>
+</html>

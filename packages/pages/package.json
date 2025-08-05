@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "esbuild --bundle --entry-names=[name]/[ext]/main --format=esm --jsx=automatic --minify --outdir=./public/static/ --sourcemap app=./src/app/index.tsx",
+    "build": "esbuild --bundle --entry-names=[name]/[ext]/main --format=esm --jsx=automatic --minify --outdir=./public/static/ --sourcemap app=./src/app/index.tsx handler-chain=../handler-chain/src/index.ts",
     "bump": "npm run bump:prod && npm run bump:dev",
     "bump:dev": "PACKAGES_TO_BUMP=$(cat package.json | jq -r '(.pinDependencies // {}) as $P | (.localPeerDependencies // {}) as $L | (.devDependencies // {}) | to_entries | map(select(.key as $K | $L | has($K) | not)) | map(.key + \"@\" + ($P[.key] // [\"latest\"])[0]) | join(\" \")') && [ ! -z \"$PACKAGES_TO_BUMP\" ] && npm install $PACKAGES_TO_BUMP || true",
     "bump:prod": "PACKAGES_TO_BUMP=$(cat package.json | jq -r '(.pinDependencies // {}) as $P | (.localPeerDependencies // {}) as $L | (.dependencies // {}) | to_entries | map(select(.key as $K | $L | has($K) | not)) | map(.key + \"@\" + ($P[.key] // [\"latest\"])[0]) | join(\" \")') && [ ! -z \"$PACKAGES_TO_BUMP\" ] && npm install $PACKAGES_TO_BUMP || true",
@@ -74,11 +74,12 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@compulim/atelier": "^0.1.0-main.434ff21",
     "classnames": "^2.5.1",
+    "handler-chain": "^0.0.0-0",
     "micromark": "^4.0.2",
     "prettier": "^3.5.3",
     "react": "^18.3.1",
-    "handler-chain": "^0.0.0-0",
     "react-dom": "^18.3.1",
     "shiki": "^3.7.0",
     "valibot": "^1.1.0"
