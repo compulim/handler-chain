@@ -1,7 +1,7 @@
-import React from 'react';
+import { Atelier } from '@compulim/atelier';
+import '@compulim/atelier/atelier.css';
+import React, { memo } from 'react';
 
-const App = () => {
-  return <main></main>;
-};
+const App = () => <Atelier packageName="handler-chain" repoOwner="compulim" repoName="handler-chain" />;
 
-export default App;
+export default memo(App);

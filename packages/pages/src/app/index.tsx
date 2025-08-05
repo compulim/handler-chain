@@ -8,12 +8,13 @@
 // rootElement && createRoot(rootElement).render(<App />);
 
 import React from 'react';
+import './index.css';
 // Testing against multiple version of React.
 // eslint-disable-next-line react/no-deprecated
 import { render } from 'react-dom';
 
 import App from './App.tsx';
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementsByTagName('main')?.[0];
 
-render(<App />, rootElement);
+rootElement && render(<App />, rootElement);
