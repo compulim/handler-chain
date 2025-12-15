@@ -65,23 +65,23 @@
     ]
   },
   "devDependencies": {
-    "@fluentui/react": "^8.123.0",
-    "@tsconfig/strictest": "^2.0.5",
-    "@types/react": "^18.3.23",
+    "@fluentui/react": "^8.125.3",
+    "@tsconfig/strictest": "^2.0.8",
+    "@types/react": "^18.3.27",
     "@types/react-dom": "^18.3.7",
-    "esbuild": "^0.25.5",
+    "esbuild": "^0.27.1",
     "react-wrap-with": "^0.1.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@compulim/atelier": "^0.1.0-main.434ff21",
     "classnames": "^2.5.1",
     "handler-chain": "^0.0.0-0",
     "micromark": "^4.0.2",
-    "prettier": "^3.5.3",
+    "prettier": "^3.7.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "shiki": "^3.7.0",
+    "shiki": "^3.20.0",
     "valibot": "^1.2.0"
   }
 }
