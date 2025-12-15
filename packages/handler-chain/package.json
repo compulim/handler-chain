@@ -50,6 +50,7 @@
   "homepage": "https://github.com/compulim/handler-chain#readme",
   "pinDependencies": {},
   "devDependencies": {
+    "@happy-dom/global-registrator": "^20.0.11",
     "@testduet/given-when-then": "^0.1.0-main.9f7aca2",
     "@tsconfig/recommended": "^1.0.10",
     "@tsconfig/strictest": "^2.0.5",
