@@ -4,7 +4,7 @@ export default defineConfig([
   {
     dts: true,
     entry: {
-      'handler-chain': './src/index.ts',
+      ['handler-chain'.split('/').reverse()[0]]: './src/index.ts'
     },
     format: ['cjs', 'esm'],
     sourcemap: true,
