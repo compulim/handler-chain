@@ -23,12 +23,12 @@
   "pinDependencies": {},
   "devDependencies": {
     "@happy-dom/global-registrator": "^20.0.11",
-    "@testduet/given-when-then": "^0.1.0-main.5e524dc",
+    "@testduet/given-when-then": "^0.1.0",
     "@testduet/wait-for": "^0.1.0",
-    "@tsconfig/strictest": "^2.0.5",
-    "expect": "^30.0.4",
+    "@tsconfig/strictest": "^2.0.8",
+    "expect": "^30.2.0",
     "resolve-cwd": "^3.0.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "handler-chain": "^0.0.0-0"
