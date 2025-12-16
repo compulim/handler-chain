@@ -3,6 +3,7 @@
   "version": "0.0.0-0",
   "description": "A generic chain-of-responsibility design pattern.",
   "files": [
+    "./*.js",
     "./dist/"
   ],
   "exports": {
