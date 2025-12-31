@@ -9,13 +9,8 @@ on:
         required: true
         type: string
       use-react:
-        default: true
-        description: Use React
-        required: true
-        type: boolean
-      skip-integration-test:
         default: false
-        description: Skip integration test
+        description: Use React
         required: true
         type: boolean
 
